@@ -1,4 +1,3 @@
-## Guillermo Lara
 
 <img src="/GuillermoLaraLisbon.jpg" alt="drawing" width="300"/>
 
