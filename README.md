@@ -3,7 +3,7 @@
 
 ### About
 
-I am a PhD Candidate in Astroparticle Phyisics at [SISSA](https://www.sissa.it/). I am part of the ERC group of Prof. Enrico Barausse.
+I am a PhD Candidate in Astroparticle Phyisics at [SISSA](https://www.sissa.it/). I am part of the [ERC group](https://grams-815673.wixsite.com/2019) of Prof. Enrico Barausse.
 
 ### Research
 
