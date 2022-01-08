@@ -2,6 +2,8 @@
 
 ![Myself](/GuillermoLaraLisbon.jpg)
 
+<img src="/GuillermoLaraLisbon.jpg" alt="drawing" width="100"/>
+
 ### About
 
 I am a PhD Candidate in Astroparticle Phyisics at [SISSA](https://www.sissa.it/). I am part of the ERC group of Prof. Enrico Barausse.
