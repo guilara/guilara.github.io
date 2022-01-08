@@ -1,7 +1,5 @@
 ## Guillermo Lara
 
-![Myself](/GuillermoLaraLisbon.jpg)
-
 <img src="/GuillermoLaraLisbon.jpg" alt="drawing" width="300"/>
 
 ### About
