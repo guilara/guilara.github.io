@@ -1,6 +1,6 @@
 ## Guillermo Lara
 
-![GuillermoLaraLisbon.jpg](/)
+![Myself](/GuillermoLaraLisbon.jpg)
 
 ### About
 
