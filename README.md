@@ -2,7 +2,7 @@
 
 ![Myself](/GuillermoLaraLisbon.jpg)
 
-<img src="/GuillermoLaraLisbon.jpg" alt="drawing" width="100"/>
+<img src="/GuillermoLaraLisbon.jpg" alt="drawing" width="300"/>
 
 ### About
 
