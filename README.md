@@ -1,3 +1,7 @@
+---
+title: Guillermo Lara
+---
+
 ## About
 
 I am a PhD Candidate in Astroparticle Phyisics at [SISSA](https://www.sissa.it/). I am part of the ERC group of Prof. Enrico Barausse.
