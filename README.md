@@ -3,17 +3,17 @@
 
 ### About
 
-I am a PhD Candidate in Astroparticle Phyisics at [SISSA](https://www.sissa.it/). I am part of the [ERC group](https://grams-815673.wixsite.com/2019) of Prof. Enrico Barausse.
+I am a posdoc a the [Max Planck Institute for Gravitational Physics](https://www.aei.mpg.de/) (Albert Einstein Institute). I did my PhD in Astroparticle Phyisics at [SISSA](https://www.sissa.it/) as part of the [ERC group](https://grams-815673.wixsite.com/2019) of Prof. Enrico Barausse.
 
 ### Research
 
-My research interests cover different theoretical and phenomenological aspects of black holes in alternative theories of gravity.
+Currently I study compact objects in alternative theories of gravity with numerical relativity. In my previous research I also studied the phenomenology of these objects with other numerical and data analysis techniques.
 
 See my [INSPIRE](https://inspirehep.net/authors/1926104) profile for my latest research articles.
 
 ### Contact
 
-SISSA [Profile](https://www.sissa.it/app/members.php?ID=8902)
+AEI [Profile](https://www.aei.mpg.de/person/125293/138766)
 
-e-mail: `jlaradel@sissa.it`
+e-mail: glara@aei.mpg.de
 
