@@ -14,6 +14,13 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
 /* ── Custom additions ── */
+
+/* Make article panels scrollable for long content */
+#main article {
+  overflow-y: auto !important;
+  max-height: 85vh !important;
+}
+
 #header .logo { font-size: 2em; }
 #header > .content > .inner p { font-size: 1em; line-height: 1.6em; }
 article h2.major { margin-bottom: 1.2em; }
@@ -232,11 +239,9 @@ article h3:first-child { margin-top: 0; }
 
 <!-- BG -->
 <div id="bg"></div>
-
 <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
   <i class="fas fa-chevron-up"></i>
 </button>
-
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
@@ -462,6 +467,5 @@ window.addEventListener('scroll', function() {
 
 
 </script>
-
 </body>
 </html>
