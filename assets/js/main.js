@@ -140,6 +140,12 @@
 
 										$article.addClass('active');
 
+										// Render publications when research panel opens
+										if ($article.attr('id') === 'research' && !window._pubsRendered) {
+											window._pubsRendered = true;
+											setTimeout(function() { if (typeof renderPublications === 'function') renderPublications(); }, 50);
+										}
+
 										// Window stuff.
 											$window
 												.scrollTop(0)
@@ -178,6 +184,12 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
+
+										// Render publications when research panel opens
+										if ($article.attr('id') === 'research' && !window._pubsRendered) {
+											window._pubsRendered = true;
+											setTimeout(function() { if (typeof renderPublications === 'function') renderPublications(); }, 50);
+										}
 
 										// Window stuff.
 											$window
