@@ -28,8 +28,8 @@ article .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; h
 article .pub-fig { float: left; width: 160px; min-width: 160px; height: 110px; object-fit: cover; border-radius: 5px; margin: 0 1.2em 0.8em 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
 article .pub-fig-ph { float: left; width: 160px; min-width: 160px; height: 110px; border-radius: 5px; margin: 0 1.2em 0.8em 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; color: rgba(255,255,255,0.3); font-size: 0.75em; text-align: center; }
 article .pub-fig-ph i { font-size: 1.8em; margin-bottom: 0.3em; }
-article .tag-btn { display: inline-block; font-size: 0.72em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 0.2em 0.3em 0; transition: border-color 0.2s, color 0.2s; }
-article .tag-btn:hover { border-color: #fff; color: #fff; }
+article .tag-btn { display: inline-block; font-size: 0.72em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.45); border-radius: 4px; color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 0.3em 0.3em 0; transition: border-color 0.2s, color 0.2s, background 0.2s; background: rgba(255,255,255,0.08); }
+article .tag-btn:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.18); }
 article h3 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.12em; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5em; margin: 1.8em 0 1em 0; }
 article h3:first-child { margin-top: 0; }
 .back-top { display: none; position: fixed; bottom: 1.5em; right: 1.5em; z-index: 9999; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; width: 42px; height: 42px; font-size: 1em; cursor: pointer; backdrop-filter: blur(4px); transition: background 0.2s; }
@@ -383,24 +383,27 @@ function buildPubEntry(p, isLast) {
   if (doiUrl) links += ' <a href="' + doiUrl + '" target="_blank" class="tag-btn">DOI</a>';
   links += ' <a href="https://inspirehep.net/search?p=arxiv:' + p.arxiv + '" target="_blank" class="tag-btn">INSPIRE</a>';
 
-  var border = isLast ? '' : 'border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.8em;padding-bottom:1.8em;';
+  var borderBottom = isLast ? 'none' : '1px solid rgba(255,255,255,0.15)';
+  var marginBottom = isLast ? '0' : '1.8em';
+  var paddingBottom = isLast ? '0' : '1.8em';
 
-  return '<div style="overflow:hidden;' + border + '">' +
-    '<a href="' + arxivUrl + '" target="_blank" style="float:left;width:150px;min-width:150px;margin:0 1.2em 0.8em 0;display:block;">' +
+  return '<div style="display:flex;flex-direction:row;gap:1em;border-bottom:' + borderBottom + ';margin-bottom:' + marginBottom + ';padding-bottom:' + paddingBottom + ';">' +
+    '<a href="' + arxivUrl + '" target="_blank" style="flex:0 0 130px;display:block;">' +
       '<img id="' + imgId + '" alt="Figure" ' +
-        'style="width:150px;height:105px;object-fit:cover;border-radius:5px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);display:block;" />' +
-      '<div id="ph-' + imgId + '" style="display:none;width:150px;height:105px;border-radius:5px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);align-items:center;justify-content:center;flex-direction:column;color:rgba(255,255,255,0.3);font-size:0.7em;text-align:center;padding:0.5em;">' +
-        '<i class="fas fa-atom" style="font-size:1.8em;opacity:0.4;margin-bottom:0.3em;"></i><span>Figure</span>' +
+        'style="width:130px;height:90px;object-fit:cover;border-radius:4px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);display:block;" />' +
+      '<div id="ph-' + imgId + '" style="display:none;width:130px;height:90px;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);align-items:center;justify-content:center;flex-direction:column;color:rgba(255,255,255,0.35);font-size:0.7em;text-align:center;padding:0.4em;">' +
+        '<i class="fas fa-atom" style="font-size:1.6em;opacity:0.5;display:block;margin-bottom:0.3em;"></i>Figure' +
       '</div>' +
     '</a>' +
-    '<div style="overflow:hidden;">' +
-      '<p style="margin:0 0 0.2em;font-size:0.75em;text-transform:uppercase;letter-spacing:0.1em;opacity:0.55;">' + p.year + '</p>' +
-      '<p style="margin:0 0 0.4em;font-size:0.9em;font-weight:600;line-height:1.4em;"><a href="' + arxivUrl + '" target="_blank" style="color:inherit;text-decoration:none;">' + p.title + '</a></p>' +
-      '<p style="margin:0 0 0.4em;font-size:0.8em;opacity:0.65;line-height:1.4em;">' + p.authors + '</p>' +
-      (p.journal ? '<p style="margin:0 0 0.6em;font-size:0.78em;font-style:italic;opacity:0.6;">' + p.journal + '</p>' : '<p style="margin-bottom:0.6em;"></p>') +
+    '<div style="flex:1;min-width:0;">' +
+      '<p style="margin:0 0 0.2em;font-size:0.72em;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);">' + p.year + '</p>' +
+      '<p style="margin:0 0 0.35em;font-size:0.88em;font-weight:600;line-height:1.4em;color:#fff;">' +
+        '<a href="' + arxivUrl + '" target="_blank" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);">' + p.title + '</a>' +
+      '</p>' +
+      '<p style="margin:0 0 0.35em;font-size:0.78em;line-height:1.4em;color:rgba(255,255,255,0.6);">' + p.authors + '</p>' +
+      (p.journal ? '<p style="margin:0 0 0.5em;font-size:0.75em;font-style:italic;color:rgba(255,255,255,0.5);">' + p.journal + '</p>' : '') +
       '<p style="margin:0;">' + links + '</p>' +
     '</div>' +
-    '<div style="clear:both;"></div>' +
   '</div>';
 }
 
