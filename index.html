@@ -279,6 +279,30 @@ function tryLoadFig(img, candidates, baseUrl, idx) {
   img.src = baseUrl + candidates[idx];
 }
 
+function loadFigForPaper(arxivId, imgId) {
+  var candidates = [
+    'https://arxiv.org/html/' + arxivId + '/x1.png',
+    'https://arxiv.org/html/' + arxivId + '/x2.png',
+    'https://arxiv.org/html/' + arxivId + '/x3.png',
+    'https://ar5iv.labs.arxiv.org/html/' + arxivId + '/assets/x1.png',
+    'https://ar5iv.labs.arxiv.org/html/' + arxivId + '/assets/x2.png',
+    'https://ar5iv.labs.arxiv.org/html/' + arxivId + '/assets/x3.png',
+  ];
+  var img = document.getElementById(imgId);
+  if (!img) return;
+  function tryNext(idx) {
+    if (idx >= candidates.length) {
+      img.style.display = 'none';
+      var ph = document.getElementById('ph-' + imgId);
+      if (ph) ph.style.display = 'flex';
+      return;
+    }
+    img.onerror = function() { img.onerror = null; tryNext(idx + 1); };
+    img.src = candidates[idx];
+  }
+  tryNext(0);
+}
+
 // ── Build a single publication entry ────────────────────────────────────────
 function buildPubEntry(p, isLast) {
   var arxivUrl  = 'https://arxiv.org/abs/' + p.arxiv;
@@ -323,7 +347,8 @@ function renderPaperList(papers) {
     var imgId = 'img-' + p.arxiv.replace(/\./g, '-');
     var img = document.getElementById(imgId);
     if (!img) return;
-    tryLoadFig(img, FIG_CANDIDATES, 'https://ar5iv.labs.arxiv.org/html/' + p.arxiv + '/assets/', 0);
+    // tryLoadFig(img, FIG_CANDIDATES, 'https://ar5iv.labs.arxiv.org/html/' + p.arxiv + '/assets/', 0);
+    loadFigForPaper(p.arxivm imgId);
   });
 }
 
