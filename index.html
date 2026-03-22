@@ -347,8 +347,8 @@ function renderPaperList(papers) {
     var imgId = 'img-' + p.arxiv.replace(/\./g, '-');
     var img = document.getElementById(imgId);
     if (!img) return;
-    // tryLoadFig(img, FIG_CANDIDATES, 'https://ar5iv.labs.arxiv.org/html/' + p.arxiv + '/assets/', 0);
-    loadFigForPaper(p.arxivm imgId);
+    tryLoadFig(img, FIG_CANDIDATES, 'https://ar5iv.labs.arxiv.org/html/' + p.arxiv + '/assets/', 0);
+    // loadFigForPaper(p.arxivm imgId);
   });
 }
 
