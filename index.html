@@ -359,7 +359,7 @@ function renderPublications() {
   container.innerHTML = '<p style="text-align:center;opacity:0.6;"><i class="fas fa-spinner fa-spin"></i> Loading from INSPIRE\u2026</p>';
 
   // Try INSPIRE API first
-  var url = 'https://inspirehep.net/api/literature?sort=mostrecent&size=25&q=a%20G.Lara.3&fields=titles,authors,arxiv_eprints,publication_info,dois,preprint_date';
+  var url = 'https://inspirehep.net/api/literature?sort=mostrecent&size=25&q=a%20G.Lara.2&fields=titles,authors,arxiv_eprints,publication_info,dois,preprint_date';
 
   fetch(url)
     .then(function(r) {
